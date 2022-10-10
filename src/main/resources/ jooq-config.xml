@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--to generate-->
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.13.0.xsd">
+
+
+    <jdbc>
+<!--        this is place to change nameDB and username and password to the same with your project-->
+        <driver>org.postgresql.Driver</driver>
+        <url>jdbc:postgresql://db_url:5432/introJOOQ</url>
+        <user>postgres</user>
+        <password>haiconmeo2</password>
+    </jdbc>
+
+    <generator>
+        <name>org.jooq.codegen.JavaGenerator</name>
+
+        <database>
+            <name>org.jooq.meta.postgres.PostgresDatabase</name>
+            <inputSchema>public</inputSchema>
+            <includes>.*</includes>
+            <excludes></excludes>
+        </database>
+
+
+        <target>
+<!--           this is place to change name and path to save generated code-->
+            <packageName>com.example.introJOOQ.model</packageName>
+            <directory>/introJOOQ/src/main/java</directory>
+        </target>
+    </generator>
+</configuration>
+<!--to execute the jOOQ code generate tool, we need to run the following code-->
+<!--        GenerationTool.generate(-->
+<!--        Files.readString(-->
+<!--        Path.of("jooq-config.xml")-->
+<!--        )-->
+<!--        );-->
